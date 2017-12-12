@@ -32,8 +32,6 @@ function countProducts(array){
     return result
 }
 
-// For example
-const products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
 
 
 function removeFreeArticles(array){
@@ -41,7 +39,22 @@ function removeFreeArticles(array){
 }
 
 
+function calculateBasket(products, prices){
+    var result = 0
+    products.forEach( (element) => {
+        result += prices[element]
+    })
+    return result
+}
+
+const products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
+
+
+
+
+
 exports.getPrices = getPrices
 exports.countArticle = countArticle
 exports.countProducts = countProducts
 exports.removeFreeArticles = removeFreeArticles
+exports.calculateBasket= calculateBasket
