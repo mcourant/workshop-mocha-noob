@@ -32,7 +32,16 @@ function countProducts(array){
     return result
 }
 
+// For example
+const products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
+
+
+function removeFreeArticles(array){
+    return array.slice(0,-2)
+}
+
 
 exports.getPrices = getPrices
 exports.countArticle = countArticle
 exports.countProducts = countProducts
+exports.removeFreeArticles = removeFreeArticles
