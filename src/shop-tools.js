@@ -8,6 +8,7 @@ function getPrices(){
         apple: 6
     }
 }
+const products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
 
 function countArticle(array){
     return array.length
@@ -47,10 +48,17 @@ function calculateBasket(products, prices){
     return result
 }
 
-const products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
+// console.log(summarizeBasket(products, prices)) // { price: 25, countArticles: 10, countProducts: 4 }
 
 
 
+function summarizeBasket(poducts, prices){
+    return  {
+        "prices": calculateBasket(products, prices),
+        "countArticles": countArticle(products),
+        "countProducts": countProducts(products)
+    }
+}
 
 
 exports.getPrices = getPrices
@@ -58,3 +66,4 @@ exports.countArticle = countArticle
 exports.countProducts = countProducts
 exports.removeFreeArticles = removeFreeArticles
 exports.calculateBasket= calculateBasket
+exports.summarizeBasket= summarizeBasket
